@@ -1,7 +1,10 @@
 #One line simple and "fast" py port scanner, works with python2.7 too
-#Do not create a file, just copy and paste, don't forget to change ip address or port range...
+#Do not create a script, just copy and paste, don't forget to change ip address or port range...
+#Port Scanner de uma linha simples e relativamente rápido, funciona com python2.7 também
+#Não crie um script, somente copie e cole, não esqueça de alterar o ip ou o range de portas...
 
 python3 -c 'exec("""\nimport socket\nfor p in range(1, 65535):  \n    c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    c.settimeout(0.05)   \n    if c.connect_ex(("192.168.50.1", p)) == 0:\n        print(p)\n""")'
 
-#I recomend you run an encoded version. Use https://www.base64encode.org/ to encode:
+#I recomend you run an encoded version. Use https://www.base64encode.org/ to encode, example:
+#Recomendo que você rode a versão encodada, exemplo:
 echo cHl0aG9uMyAtYyAnZXhlYygiIiJcbmltcG9ydCBzb2NrZXRcbmZvciBwIGluIHJhbmdlKDEsIDY1NTM1KTogIFxuICAgIGMgPSBzb2NrZXQuc29ja2V0KHNvY2tldC5BRl9JTkVULCBzb2NrZXQuU09DS19TVFJFQU0pXG4gICAgYy5zZXR0aW1lb3V0KDAuMDUpICAgXG4gICAgaWYgYy5jb25uZWN0X2V4KCgiMTkyLjE2OC41MC4xIiwgcCkpID09IDA6XG4gICAgICAgIHByaW50KHApXG4iIiIpJwo= | base64 -d | /bin/sh
