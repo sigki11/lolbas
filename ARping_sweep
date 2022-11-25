@@ -1,4 +1,4 @@
 #Windows machines with firewall enabled don't reply icmp(ping), so, from a linux machine we use arping to look for alive hosts
-#Máquinas windows com o firewall ativado não respondem icmp(ping), então, de uma máquina linux utilizamos arping para procurar por hosts ativos
+#Máquinas Windows com o firewall ativado não respondem icmp(ping), então, de uma máquina linux utilizamos arping para procurar por hosts ativos
 
 for i in {1..254};do arping -c 1 172.19.0.$i | grep -i "unicast reply";done
