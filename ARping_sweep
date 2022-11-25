@@ -6,5 +6,5 @@
 #From Linux
 for i in {1..254};do arping -I eth0 -c 1 192.168.1.$i | grep -i "unicast reply";done
 
-#From Windows cmd
+#From Windows cmd (based on https://www.sans.org/blog/pen-test-poster-white-board-powershell-ping-sweeper/)
 powershell.exe -c "1..254 | % {echo "192.168.1.$_"; ping -n 1 -w 100 192.168.1.$_} | Select-String ttl"
