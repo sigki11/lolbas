@@ -7,4 +7,4 @@
 for i in {1..254};do arping -I eth0 -c 1 192.168.1.$i | grep -i "unicast reply";done
 
 #From Windows cmd
-powershell.exe -c "1..254 | % {echo "192.168.0.$_"; ping -n 1 -w 100 192.168.0.$_} | Select-String ttl"
+powershell.exe -c "1..254 | % {echo "192.168.1.$_"; ping -n 1 -w 100 192.168.1.$_} | Select-String ttl"
