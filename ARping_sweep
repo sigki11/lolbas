@@ -1,0 +1,3 @@
+#Windows machines with firewall enabled don't reply icmp, so, from a linux machine we use arping to look for alive hosts
+
+for i in {1..254};do arping -c 1 172.19.0.$i | grep -i "unicast reply";done
